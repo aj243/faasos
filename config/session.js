@@ -110,4 +110,15 @@ module.exports.session = {
   //   }
   // }
 
+  // adapter: 'connect-mongo',
+  // url: 'mongodb://user:pass@host:port/database',
+  // collection: 'sessions',
+  // auto_reconnect: false,
+  // ssl: false,
+  // stringify: true
+
+  adapter: 'connect-mongo',
+  url: 'mongodb://localhost:27017/productionMongo',
+  collection: 'sessions'
+
 };
