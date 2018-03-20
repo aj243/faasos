@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title><h2>Kitchen Report</h2></title>
+  </head>
+  <body>
+
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Produced</th> 
+    <th>Predicted</th>
+  </tr>
+  <% for(var i=0; i < products.length; i++) { %>
+	<tr>
+		<td><%= products[i].name %></td>
+		<td><%= products[i].createdTillNow %></td>
+		<td><%= products[i].predicted %></td>
+	</tr>
+	<% } %>
+</table>
+
+</body>
+</html>
