@@ -8,8 +8,8 @@
 var auth = require('../services/auth');
 
 module.exports = {
-    register: function (req,res) {
-        auth.register(req,res);
+    register: function (req, res) {
+        auth.register(req, res);
     },
     login: function (req, res) {
         auth.login(req, res);
@@ -17,7 +17,7 @@ module.exports = {
     validate_token: function (req, res) {
         auth.isvalidtoken(req, res);
     },
-    logout: function(req, res){
+    logout: function (req, res) {
         //req.logout is passportjs function to clear user information. see http://passportjs.org/docs
         req.logout();
         req.session.destroy();

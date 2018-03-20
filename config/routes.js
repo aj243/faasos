@@ -22,41 +22,40 @@
 
 module.exports.routes = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+    *                                                                          *
+    * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
+    * etc. depending on your default view engine) your home page.              *
+    *                                                                          *
+    * (Alternatively, remove this and add an `index.html` file in your         *
+    * `assets` directory)                                                      *
+    *                                                                          *
+    ***************************************************************************/
 
-  // '/': {
-  //   view: 'homepage'
-  // },
+    // '/': {
+    //   view: 'homepage'
+    // },
 
-  //this is, combined with disabling blueprints will restrict access to the required action based on controller
-  'GET /' : 'ProductController.index',
-  'POST /auth/login': 'AuthController.login',
-  'GET /auth/validate_token': 'AuthController.validate_token',
-  'GET /auth/logout': 'AuthController.logout',
-  'POST /register': 'UserController.register',
+    'GET /': 'ProductController.index',
+    'POST /auth/login': 'AuthController.login',
+    'GET /auth/validate_token': 'AuthController.validate_token',
+    'GET /auth/logout': 'AuthController.logout',
+    'POST /register': 'UserController.register',
 
-  'POST /order': 'ProductController.placeOrder',
-  'POST /predicted': 'ProductController.setPredicted',
-  'GET /watchProduct': 'ProductController.watchProduct',
-  'GET /createPdf': 'ProductController.createPdf',
+    'POST /order': 'ProductController.placeOrder',
+    'POST /predicted': 'ProductController.setPredicted',
+    'GET /watchProduct': 'ProductController.watchProduct',
+    'GET /createPdf': 'ProductController.createPdf',
 
 
-  /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+    *                                                                          *
+    * Custom routes here...                                                    *
+    *                                                                          *
+    * If a request to a URL doesn't match any of the custom routes above, it   *
+    * is matched against Sails route blueprints. See `config/blueprints.js`    *
+    * for configuration options and examples.                                  *
+    *                                                                          *
+    ***************************************************************************/
 
 };

@@ -7,35 +7,35 @@
 
 module.exports = {
 
-  attributes: {
-    id: {
-      type: 'INTEGER',
-      autoIncrement: true
+    attributes: {
+        id: {
+            type: 'INTEGER',
+            autoIncrement: true
+        },
+        name: {
+            type: 'STRING',
+            required: true,
+            unique: true
+        },
+        quantity: {
+            type: 'INTEGER',
+            defaultsTo: 0,
+            // required: true,
+            // unique: true
+        },
+        createdTillNow: {
+            type: 'INTEGER',
+            defaultsTo: 0,
+            // required: false
+        },
+        predicted: {
+            type: 'INTEGER',
+            defaultsTo: 0,
+            // required: false
+        }
+
     },
-    name: {
-        type: 'STRING',
-        required: true,
-        unique: true
-    },
-    quantity: {
-        type: 'INTEGER',
-        defaultsTo: 0,
-        // required: true,
-        // unique: true
-    },
-    createdTillNow: {
-        type: 'INTEGER',
-        defaultsTo: 0,
-        // required: false
-    },
-    predicted: {
-        type: 'INTEGER',
-        defaultsTo: 0,
-        // required: false
-    }
-    
-  },
-  
-  
+
+
 };
 

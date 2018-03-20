@@ -25,14 +25,6 @@ module.exports = {
         type: 'STRING',
         required: true
     },
-    isAdmin: {
-        type: 'BOOLEAN',
-        defaultsTo: false
-    },
-    isDeleted: {
-        type: 'BOOLEAN',
-        defaultsTo: false
-    },
     toJSON: function () {
         var obj = this.toObject();
         delete obj.password;

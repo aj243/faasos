@@ -19,50 +19,47 @@
 
 module.exports.policies = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions (`true` allows public     *
-  * access)                                                                  *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+    *                                                                          *
+    * Default policy for all controllers and actions (`true` allows public     *
+    * access)                                                                  *
+    *                                                                          *
+    ***************************************************************************/
 
-  // '*': true,
+    // '*': true,
 
-  /***************************************************************************
-  *                                                                          *
-  * Here's an example of mapping some policies to run before a controller    *
-  * and its actions                                                          *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+    *                                                                          *
+    * Here's an example of mapping some policies to run before a controller    *
+    * and its actions                                                          *
+    *                                                                          *
+    ***************************************************************************/
 
-  UserController: {
-    register: true
-  },
-  AuthController: {
-    '*': true
-  },
-  QuoteController: {
-    getQuote: true,
-    getProtectedQuote: "hasToken"
-  },
-  ProductController: {
-    placeOrder: "hasToken",
-    setPredicted: "hasToken",
-    getProducts: "hasToken"
-  }
+    UserController: {
+        register: true
+    },
+    AuthController: {
+        '*': true
+    },
+    ProductController: {
+        placeOrder: "hasToken",
+        setPredicted: "hasToken",
+        createPdf: "hasToken",
+        index: "hasToken"
+    }
 
-  // RabbitController: {
+    // RabbitController: {
 
-  // Apply the `false` policy as the default for all of RabbitController's actions
-  // (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
-  // '*': false,
+    // Apply the `false` policy as the default for all of RabbitController's actions
+    // (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
+    // '*': false,
 
-  // For the action `nurture`, apply the 'isRabbitMother' policy
-  // (this overrides `false` above)
-  // nurture	: 'isRabbitMother',
+    // For the action `nurture`, apply the 'isRabbitMother' policy
+    // (this overrides `false` above)
+    // nurture	: 'isRabbitMother',
 
-  // Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
-  // before letting any users feed our rabbits
-  // feed : ['isNiceToAnimals', 'hasRabbitFood']
-  // }
+    // Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
+    // before letting any users feed our rabbits
+    // feed : ['isNiceToAnimals', 'hasRabbitFood']
+    // }
 };
