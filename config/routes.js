@@ -37,9 +37,9 @@ module.exports.routes = {
     // },
 
     'GET /': 'ProductController.index',
-    'POST /auth/login': 'AuthController.login',
-    'GET /auth/validate_token': 'AuthController.validate_token',
-    'GET /auth/logout': 'AuthController.logout',
+    'POST /login': 'AuthController.login',
+    'GET /validate_token': 'AuthController.validate_token',
+    'GET /logout': 'AuthController.logout',
     'POST /register': 'UserController.register',
 
     'POST /order': 'ProductController.placeOrder',
