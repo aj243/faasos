@@ -18,12 +18,12 @@ module.exports = {
    ***************************************************************************/
 
   models: {
-    connection: 'productionMongo'
+    connection: 'localDiskDb'
   },
-  session: {
-    adapter: 'connect-mongo',
-    url: process.env.MONGODB_URI
-  }
+  // session: {
+  //   adapter: 'connect-mongo',
+  //   url: process.env.MONGODB_URI
+  // }
 
   /***************************************************************************
    * Set the port in the production environment to 80                        *
