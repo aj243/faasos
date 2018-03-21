@@ -47,7 +47,8 @@
   "author": "ayush",
   "license": "",
   "engines": {
-    "node": "8.9.1"
+    "node": "7.10.0",
+    "npm": "4.2.2"
 
   }
 }
