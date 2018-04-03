@@ -47,6 +47,10 @@ module.exports.routes = {
     'GET /watchProduct': 'ProductController.watchProduct',
     'GET /createPdf': 'ProductController.createPdf',
 
+    'GET /register': {view: 'register'},
+    'GET /login': {view: 'login'},
+    'GET /order': {view: 'order'},
+    'GET /predicted': {view: 'predicted'}
 
     /***************************************************************************
     *                                                                          *

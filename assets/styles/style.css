@@ -1,7 +1,12 @@
 .product-id{
 	display: none;
 }
-#reportButton{
+.table-button{
+	background-color: lightgrey;
+	margin-left: 5px;
 	margin-bottom: 20px;
     margin-top: 10px;
+}
+.main-form{
+	margin-top: 30px;
 }

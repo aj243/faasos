@@ -1,15 +1,11 @@
-/**
- * UserController
- *
- * @description :: Server-side logic for managing users
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
- */
+var auth = require('../services/auth');
 var EmailAddresses = require('machinepack-emailaddresses');
 
 module.exports = {
     register: function (req, res) {
         var email = req.param('email');
         var password = req.param('password');
+        var username = req.param('username');
 
         //validate request
         if (_.isUndefined(req.param('email'))) {
@@ -28,7 +24,7 @@ module.exports = {
                 return res.serverError(err);
             },
             invalid: function () {
-                return res.badRequest('Does not looks like an email address for me :)');
+                return res.badRequest('Does not looks like an email');
             },
             success: function () {
                 User.findOne({ email: email }).exec(function (err, result) {
@@ -39,12 +35,14 @@ module.exports = {
                         return res.badRequest('Email already used!');
                     } else {
 
-                        User.create({ username: email, email: email, password: password }).exec(function (err, result) {
+                        User.create({ username: username, email: email, password: password }).exec(function (err, user) {
                             if (err) {
                                 return res.serverError(err);
                                 //return res.badRequest('Error create user');
                             }
-                            return res.ok();
+                            else {
+                                auth.login(req, res);
+                            }
                         })
                     }
                 });

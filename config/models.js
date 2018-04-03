@@ -18,7 +18,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   // connection: 'localDiskDb',
-  connection: 'productionMongo',
+  // connection: 'productionMongo',
 
   /***************************************************************************
   *                                                                          *
@@ -29,6 +29,6 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   schema: true,
-  migrate: 'alter'
+  migrate: 'drop'
 
 };

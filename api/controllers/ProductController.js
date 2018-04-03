@@ -33,10 +33,10 @@ module.exports = {
                         if (err) {
                             return res.serverError(err);
                         }
-                        //Product.publishCreate({id: productId});
                         //Notify client socket about the update
                         Product.publishUpdate(productId, { productQty: productQty });
-                        return res.ok(product);
+                        return res.view('order');
+                        // return res.ok(product);
                     })
                 }
             });
@@ -67,7 +67,7 @@ module.exports = {
                             return res.serverError(err);
                             //return res.badRequest('Error create user');
                         }
-                        return res.ok(result);
+                        return res.view('predicted');
                     })
                 }
             });
