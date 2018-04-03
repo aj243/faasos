@@ -117,8 +117,8 @@ module.exports.session = {
   // ssl: false,
   // stringify: true
 
-  adapter: 'connect-mongo',
-  url: 'mongodb://localhost:27017/productionMongo',
-  collection: 'sessions'
+  // adapter: 'connect-mongo',
+  // url: 'mongodb://localhost:27017/productionMongo',
+  // collection: 'sessions'
 
 };

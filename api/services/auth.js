@@ -22,17 +22,9 @@ module.exports = {
                     var token = jwt.sign(user[0], sails.config.secret, { expiresIn: 60 * 60 * 24 });
                     var expiresIn = 60 * 60 * 2;
                     // Set persistent cookie
-                    // req.session.cookie.token = token;
-                    // res.send({
-                    //     success: true,
-                    //     user: { email: user[0].email, username: user[0].username },
-                    //     token: token
-                    // });
                     res.cookie('Jwt', token,{
-                        // maxAge: expiresIn,
+                        maxAge: expiresIn,
                         path: '/'
-                        // httpOnly: true,
-                        // signed:true,
                       });
                     return res.redirect('/')
                 }
