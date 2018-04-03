@@ -4,7 +4,6 @@ $(document).ready(function () {
 	$(".doneButton").click(function () {
 		var id = $(this).val();
 		var trRef = $(this).parents('tr').attr('id');
-		debugger
 		io.socket.get('/product/change', {
 			value: id,
 			ref: trRef
@@ -15,7 +14,6 @@ $(document).ready(function () {
 	});
 	io.socket.on('message', function (data) {
 		var trRef = $(`#${data.ref}`);
-		// debugger
 		trRef.children('td:eq(2)').text('0');
 		trRef.children('td:eq(3)').text(data.createdTillNow);
 		trRef.find('button').attr('disabled', 'disabled');
@@ -28,6 +26,7 @@ $(document).ready(function () {
 
 	io.socket.on('product', function (event) {
 		var trRef = $(`#${event.id}`);
+		debugger
 		trRef.children('td:eq(2)').text(event.data.productQty);
 		trRef.find('button').removeAttr('disabled');
 		console.log("Got some changes to product", event);

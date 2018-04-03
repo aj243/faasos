@@ -8,7 +8,7 @@
 module.exports = {
     placeOrder: function (req, res) {
         var name = req.param('name');
-        var quantity = req.param('quantity');
+        var quantity = parseInt(req.param('quantity'));
 
         //validate request
         if (_.isUndefined(req.param('name'))) {
@@ -35,8 +35,8 @@ module.exports = {
                         }
                         //Notify client socket about the update
                         Product.publishUpdate(productId, { productQty: productQty });
-                        return res.view('order');
-                        // return res.ok(product);
+                        // return res.view('order');
+                        return res.ok(product);
                     })
                 }
             });
@@ -45,7 +45,7 @@ module.exports = {
 
     setPredicted: function (req, res) {
         var name = req.param('name');
-        var predicted = req.param('predicted');
+        var predicted = parseInt(req.param('predicted'));
 
         if (_.isUndefined(req.param('name'))) {
             return res.badRequest('An product name is required!');
@@ -65,9 +65,9 @@ module.exports = {
                     Product.create({ name: name, predicted: predicted }).exec(function (err, result) {
                         if (err) {
                             return res.serverError(err);
-                            //return res.badRequest('Error create user');
                         }
-                        return res.view('predicted');
+                        return res.ok(result);
+                        // return res.view('predicted');
                     })
                 }
             });

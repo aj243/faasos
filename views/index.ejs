@@ -1,5 +1,10 @@
 <div class="container" id="kitchenTable">
   <h2>Kitchen Display</h2>
+  <div>
+    <a role="button" class="a-button table-button btn btn-sm btn-default" href="/predicted">Set Predicted</a>
+    <a role="button" class="a-button table-button btn btn-sm btn-default" href="/order">Place Order</a>
+    <a role="button" id="logoutButton" class="a-button table-button btn btn-sm btn-default" href="/logout">Logout</a>
+  </div>
   <% if (products.length > 0) { %>
     <table class="table table-striped">
       <thead>
@@ -36,9 +41,6 @@
         <% } %>
       </tbody>
       <button id="reportButton" class="btn btn-sm btn-default" href="http://localhost:1337/createPdf" target="_blank">Download Report</button>
-      <a role="button" id="logoutButton" class="table-button btn btn-sm btn-default" href="/logout">Logout</a>
-      <a role="button" class="table-button btn btn-sm btn-default" href="/predicted">Set Predicted</a>
-      <a role="button" class="table-button btn btn-sm btn-default" href="/order">Place Order</a>
     </table>
   <% } %>
   <% if (products.length == 0) { %>

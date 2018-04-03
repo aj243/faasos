@@ -38,9 +38,9 @@ module.exports = {
                         User.create({ username: username, email: email, password: password }).exec(function (err, user) {
                             if (err) {
                                 return res.serverError(err);
-                                //return res.badRequest('Error create user');
                             }
                             else {
+                                // return res.ok(user);
                                 auth.login(req, res);
                             }
                         })
@@ -50,9 +50,6 @@ module.exports = {
 
         })
 
-
-
-        //res.send({message: 'TODO: register User'});
     }
 };
 
