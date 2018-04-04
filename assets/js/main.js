@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 	$("#reportButton").click(function (e) {
 		e.preventDefault();
-		window.open('http://localhost:1337/createPdf', '_blank');
+		window.open('https://dalviroo-kitchen.herokuapp.com/createPdf', '_blank');
 	});
 
 });
