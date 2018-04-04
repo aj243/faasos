@@ -23,7 +23,7 @@ module.exports = {
                     var expiresIn = 60 * 60 * 2;
                     // Set persistent cookie
                     res.cookie('Jwt', token,{
-                        maxAge: expiresIn,
+                        // maxAge: expiresIn,
                         path: '/'
                       });
                     return res.redirect('/')
