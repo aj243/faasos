@@ -32,10 +32,10 @@ module.exports.connections = {
     adapter: 'sails-disk'
   },
 
-  productionMongo: {
-      adapter: 'sails-mongo',
-      url: process.env.MONGODB_URI
-  }
+  // productionMongo: {
+  //     adapter: 'sails-mongo',
+  //     url: process.env.MONGODB_URI
+  // }
 
   /***************************************************************************
   *                                                                          *
