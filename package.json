@@ -43,7 +43,7 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "sails lift"
+    "start": "sails lift --port 1337"
   },
   "main": "app.js",
   "repository": {
