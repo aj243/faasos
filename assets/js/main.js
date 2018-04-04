@@ -26,7 +26,6 @@ $(document).ready(function () {
 
 	io.socket.on('product', function (event) {
 		var trRef = $(`#${event.id}`);
-		debugger
 		trRef.children('td:eq(2)').text(event.data.productQty);
 		trRef.find('button').removeAttr('disabled');
 		console.log("Got some changes to product", event);
